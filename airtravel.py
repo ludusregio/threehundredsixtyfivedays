@@ -1,4 +1,4 @@
-"""Modell for aircraft flights"""
+"""Model for aircraft flights"""
 
 class Flight:
 
