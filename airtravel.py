@@ -2,7 +2,7 @@
 
 class Flight:
 
-    def __init__(self, number):
+    def __init__(self, number, aircraft):
         if not number[:2].isalpha():
             raise ValueError("No airline code in '{}'".format(number))
 
@@ -13,6 +13,10 @@ class Flight:
             raise ValueError("Invalid route number '{}'".format(number))
 
         self._number = number
+        self._aircraft = aircraft
+
+        rows, seats = self._aircraft.seating_plan()
+        self._seating = [None] + [{letter: None for letter in seats} for _ in rows]
 
     def number(self):
         return self._number
@@ -35,6 +39,6 @@ class Aircraft:
     def model(self):
         return self._model
 
-    def seating_layout(self):
+    def seating_plan(self):
         return (range(1, self._num_rows + 1),
                 "ABCDEFGHJK"[:self._num_seats_per_row])
