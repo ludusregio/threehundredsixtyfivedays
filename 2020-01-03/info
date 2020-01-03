@@ -1,0 +1,31 @@
+source_point: https://www.youtube.com/watch?v=wfcWRAxRVBA
+
+Python 3.7.5 (default, Nov  1 2019, 02:16:23)
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+>>>
+>>> from lesson import Robot
+>>>
+>>> r1 = Robot()
+>>>
+>>>
+>>> r1.introduce_self()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/fernando/threehundredsixtyfivedays/2020-01-03/lesson.py", line 4, in introduce_self
+    print(f'My name is {self.name}')
+AttributeError: 'Robot' object has no attribute 'name'
+>>> r1.name = "Tom"
+>>>
+>>>
+>>> r1.introduce_self()
+My name is Tom
+>>>
+>>> r1.color = 'Blue'
+>>> r1.weight = 40
+>>>
+>>>
+>>> r1.weight
+40
+>>>
